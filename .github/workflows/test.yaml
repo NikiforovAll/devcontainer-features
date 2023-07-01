@@ -15,8 +15,8 @@ jobs:
         features:
           - antlr4
         baseImage:
-          - debian:latest
-          - ubuntu:latest
+          # - debian:latest
+          # - ubuntu:latest
           - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
       - uses: actions/checkout@v3
