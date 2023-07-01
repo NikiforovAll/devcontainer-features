@@ -1,0 +1,23 @@
+{
+    "name": "ANTLR4",
+    "id": "antlr4",
+    "version": "1.0.0",
+    "description": "Adds ANTLR4",
+    "documentationURL": "https://github.com/NikiforovAll/devcontainer-features",
+    "options": {
+        "version": {
+            "default": "4.13.0",
+            "description": "Select the version to install.",
+            "proposals": [
+                "4.13.0",
+                "4.12.0",
+                "4.11.1"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/java",
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
