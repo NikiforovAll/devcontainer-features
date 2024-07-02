@@ -1,0 +1,11 @@
+{
+    "name": ".NET Aspire",
+    "id": "dotnet-aspire",
+    "version": "1.0.0",
+    "description": "Installs the .NET Aspire. See: https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/setup-tooling",
+    "options": {},
+    "mounts": [],
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/dotnet"
+    ]
+}
