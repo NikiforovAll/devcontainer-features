@@ -5,7 +5,7 @@
     "description": "Installs the .NET Aspire. See: https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/setup-tooling",
     "options": {},
     "mounts": [],
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/dotnet"
-    ]
+    "dependsOn": {
+        "ghcr.io/devcontainers/features/dotnet": {}
+    }
 }
