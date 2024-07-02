@@ -1,0 +1,11 @@
+{
+    "name": ".NET CSharpier",
+    "id": "dotnet-csharpier",
+    "version": "1.0.0",
+    "description": "Installs the CSharpier. See: https://csharpier.com/docs/About",
+    "options": {},
+    "mounts": [],
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/dotnet"
+    ]
+}

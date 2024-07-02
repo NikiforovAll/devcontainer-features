@@ -15,6 +15,7 @@ jobs:
         features:
           - antlr4
           - dotnet-aspire
+          - dotnet-csharpier
         baseImage:
           # - debian:latest
           # - ubuntu:latest
@@ -36,6 +37,7 @@ jobs:
         features:
           - antlr4
           - dotnet-aspire
+          - dotnet-csharpier
     steps:
       - uses: actions/checkout@v3
 
