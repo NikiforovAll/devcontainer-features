@@ -17,8 +17,6 @@ jobs:
           - dotnet-aspire
           - dotnet-csharpier
         baseImage:
-          # - debian:latest
-          # - ubuntu:latest
           - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
       - uses: actions/checkout@v3
@@ -36,7 +34,6 @@ jobs:
       matrix:
         features:
           - antlr4
-          - dotnet-aspire
           - dotnet-csharpier
     steps:
       - uses: actions/checkout@v3

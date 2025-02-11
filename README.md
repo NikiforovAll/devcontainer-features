@@ -9,5 +9,4 @@ This repo contains my custom devcontainer features.
 | Feature                                    | Description                                                    |
 | ------------------------------------------ | -------------------------------------------------------------- |
 | [antlr4](./src/antlr4)                     | Installs ANTLR4 for parsing and generating code from grammars. |
-| [dotnet-aspire](./src/dotnet-aspire)       | Installs .NET Aspire.                                          |
 | [dotnet-cshaprier](./src/dotnet-csharpier) | Installs .NET CSharpier.                                       |

@@ -1,4 +1,4 @@
-# .NET Aspire (dotnet-csharpier)
+# .NET (dotnet-csharpier)
 
 Installs the CSharpier. See: <https://csharpier.com/docs/About>
 
