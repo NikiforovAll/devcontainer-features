@@ -14,6 +14,7 @@ Installs the CSharpier. See: <https://csharpier.com/docs/About>
 
 | Options Id | Description | Type | Default Value |
 | ---------- | ----------- | ---- | ------------- |
+| version | Select the version to install. | string | latest |
 
 ## Changelog
 
