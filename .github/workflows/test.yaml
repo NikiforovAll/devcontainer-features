@@ -14,7 +14,6 @@ jobs:
       matrix:
         features:
           - antlr4
-          - dotnet-aspire
           - dotnet-csharpier
         baseImage:
           - mcr.microsoft.com/devcontainers/base:ubuntu
