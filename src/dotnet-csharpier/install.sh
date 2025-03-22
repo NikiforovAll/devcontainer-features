@@ -6,9 +6,8 @@ set -e
 
 echo "Activating feature 'dotnet-csharpier'"
 
-if [ -z "$VERSION" ]
-then
-  dotnet tool install csharpier --global
+if test "${CSHARPIER_VERSION}" = "latest"; then
+  dotnet tool install -g csharpier
 else
-  dotnet tool install --global CSharpier --version $CSHARPIER_VERSION
+  dotnet tool install -g csharpier --version "$CSHARPIER_VERSION"
 fi
