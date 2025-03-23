@@ -1,8 +1,17 @@
 {
-    "dotnetcontainer": {
+    "test": {
         "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0",
         "features": {
             "ghcr.io/devcontainers/features/dotnet:2": {}
+        }
+    },
+    "test_specific_version_installation": {
+        "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0",
+        "features": {
+            "ghcr.io/devcontainers/features/dotnet:2": {},
+            "dotnet-csharpier": {
+                "version": "0.30.0"
+            }
         }
     }
 }
