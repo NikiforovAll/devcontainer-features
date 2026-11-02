@@ -1,7 +1,7 @@
 {
     "name": ".NET CSharpier",
     "id": "dotnet-csharpier",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Installs the CSharpier. See: https://csharpier.com/docs/About",
     "options": {
         "version": {
@@ -10,8 +10,11 @@
             "description": "Select the CSharpier version you would like to install"
         }
     },
+    "containerEnv": {
+        "PATH": "/usr/local/share/dotnet-tools:${PATH}"
+    },
     "mounts": [],
     "dependsOn": {
-        "ghcr.io/devcontainers/features/dotnet": {}
+        "ghcr.io/devcontainers/features/dotnet:2": {}
     }
 }
