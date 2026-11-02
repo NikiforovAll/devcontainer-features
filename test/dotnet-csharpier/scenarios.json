@@ -1,17 +1,25 @@
 {
-    "test": {
-        "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0",
+    "dotnetcontainer": {
+        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+        "remoteUser": "vscode",
         "features": {
-            "ghcr.io/devcontainers/features/dotnet:2": {}
+            "dotnet-csharpier": {}
         }
     },
     "test_specific_version_installation": {
-        "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0",
+        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+        "remoteUser": "vscode",
         "features": {
-            "ghcr.io/devcontainers/features/dotnet:2": {},
             "dotnet-csharpier": {
                 "version": "0.30.0"
             }
+        }
+    },
+    "root_user": {
+        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+        "remoteUser": "root",
+        "features": {
+            "dotnet-csharpier": {}
         }
     }
 }
