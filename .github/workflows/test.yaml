@@ -15,7 +15,7 @@ jobs:
           - features: antlr4
             baseImage: mcr.microsoft.com/devcontainers/base:ubuntu
           - features: dotnet-csharpier
-            baseImage: mcr.microsoft.com/devcontainers/dotnet:1-10.0
+            baseImage: mcr.microsoft.com/devcontainers/dotnet:2-10.0
     steps:
       - uses: actions/checkout@v7
 

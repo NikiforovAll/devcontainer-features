@@ -3,7 +3,7 @@
 This feature needs the .NET SDK. Use an image that has .NET, or add the dotnet feature:
 
 ```json
-"image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+"image": "mcr.microsoft.com/devcontainers/dotnet:2-10.0",
 "features": {
     "ghcr.io/nikiforovall/devcontainer-features/dotnet-csharpier:2": {}
 }
