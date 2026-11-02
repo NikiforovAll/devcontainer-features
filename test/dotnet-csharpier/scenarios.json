@@ -3,6 +3,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "vscode",
         "features": {
+            "ghcr.io/devcontainers/features/dotnet:2": {},
             "dotnet-csharpier": {}
         }
     },
@@ -10,6 +11,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "vscode",
         "features": {
+            "ghcr.io/devcontainers/features/dotnet:2": {},
             "dotnet-csharpier": {
                 "version": "0.30.0"
             }
@@ -19,7 +21,27 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "root",
         "features": {
+            "ghcr.io/devcontainers/features/dotnet:2": {},
             "dotnet-csharpier": {}
+        }
+    },
+    "dotnet_image": {
+        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+        "remoteUser": "vscode",
+        "features": {
+            "dotnet-csharpier": {}
+        }
+    },
+    "dotnet_feature_with_options": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "remoteUser": "vscode",
+        "features": {
+            "ghcr.io/devcontainers/features/dotnet:2": {
+                "version": "8.0"
+            },
+            "dotnet-csharpier": {
+                "version": "0.30.0"
+            }
         }
     }
 }
