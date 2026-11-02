@@ -1,13 +1,13 @@
 {
-    "dotnetcontainer": {
-        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+    "vscode_user": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "vscode",
         "features": {
             "dotnet-csharpier": {}
         }
     },
     "test_specific_version_installation": {
-        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "vscode",
         "features": {
             "dotnet-csharpier": {
@@ -16,7 +16,7 @@
         }
     },
     "root_user": {
-        "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "root",
         "features": {
             "dotnet-csharpier": {}
