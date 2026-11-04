@@ -36,7 +36,7 @@ This feature needs the .NET SDK. Use an image that has .NET, or add the dotnet f
 }
 ```
 
-CSharpier is installed to `/usr/local/share/dotnet-tools`, which is on `PATH` for all users. Run it with `csharpier`.
+CSharpier is installed as a global .NET tool of the remote user (`dotnet tool install --global`), so `dotnet tool list --global` and the CSharpier VS Code extension find it. A link in `/usr/local/bin` puts it on `PATH`. Run it with `csharpier`.
 
 ## Upgrading from 1.x
 
