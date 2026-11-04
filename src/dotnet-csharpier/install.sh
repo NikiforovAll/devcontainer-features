@@ -2,23 +2,38 @@
 set -e
 
 CSHARPIER_VERSION="${VERSION:-"latest"}"
-TOOL_PATH="/usr/local/share/dotnet-tools"
+TARGET_USER="${_REMOTE_USER:-"root"}"
+TARGET_HOME="${_REMOTE_USER_HOME:-"$(getent passwd "$TARGET_USER" | cut -d: -f6)"}"
 
 echo "Activating feature 'dotnet-csharpier'"
 
-if ! command -v dotnet >/dev/null 2>&1; then
+DOTNET="$(command -v dotnet || true)"
+if [ -z "$DOTNET" ]; then
   echo "(!) dotnet-csharpier requires the .NET SDK, but 'dotnet' was not found."
   echo "    Use an image with .NET (for example mcr.microsoft.com/devcontainers/dotnet),"
   echo "    or add the 'ghcr.io/devcontainers/features/dotnet' feature."
   exit 1
 fi
 
-# Install to a shared path instead of `-g`: feature scripts run as root, and
-# global tools land in root's home, invisible to the remote user (issue #13).
-if test "${CSHARPIER_VERSION}" = "latest"; then
-  dotnet tool install csharpier --tool-path "$TOOL_PATH"
-else
-  dotnet tool install csharpier --tool-path "$TOOL_PATH" --version "$CSHARPIER_VERSION"
+# Install as a global tool of the remote user: editor integrations such as the
+# CSharpier VS Code extension find CSharpier only through `dotnet tool list -g`.
+# Feature scripts run as root, so switch to the remote user (issue #13).
+INSTALL_CMD="\"$DOTNET\" tool install --global csharpier"
+if [ "$CSHARPIER_VERSION" != "latest" ]; then
+  INSTALL_CMD="$INSTALL_CMD --version \"$CSHARPIER_VERSION\""
 fi
 
-chmod -R a+rX "$TOOL_PATH"
+if [ "$TARGET_USER" = "root" ]; then
+  HOME="$TARGET_HOME" DOTNET_CLI_HOME="$TARGET_HOME" sh -c "$INSTALL_CMD"
+else
+  su "$TARGET_USER" -s /bin/sh -c "HOME=\"$TARGET_HOME\" DOTNET_CLI_HOME=\"$TARGET_HOME\" DOTNET_ROOT=\"${DOTNET_ROOT:-}\" $INSTALL_CMD"
+fi
+
+# containerEnv cannot refer to the remote user's home, so expose the tool
+# through /usr/local/bin for shells and non-login processes alike.
+TOOLS_DIR="$TARGET_HOME/.dotnet/tools"
+for tool in csharpier dotnet-csharpier; do
+  if [ -e "$TOOLS_DIR/$tool" ]; then
+    ln -sf "$TOOLS_DIR/$tool" "/usr/local/bin/$tool"
+  fi
+done
